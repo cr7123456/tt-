@@ -1,0 +1,22 @@
+let gulp=require("gulp");
+gulp.task("copyhtml",function(){
+	 gulp.src("*.html").pipe(gulp.dest("D:\\phpStudy\\WWW\\myfiledemo\\mytwoprogrammer"));
+});
+gulp.task("build",['copyhtml','copyjs','copyimg','copycss'],function(){
+	console.log("ok");
+});
+gulp.task("watchall",function(){
+	gulp.watch("*.html",['copyhtml']);
+	gulp.watch("js/*.js",['copyjs']);
+	gulp.watch("img/*.{jpg,png}",['copyimg']);
+	gulp.watch("css/*.css",['copycss']);
+});
+gulp.task("copyjs",function(){
+	gulp.src("js/*.js").pipe(gulp.dest("D:\\phpStudy\\WWW\\myfiledemo\\mytwoprogrammer\\js"));
+});
+gulp.task("copyimg",function(){
+	gulp.src("img/*.{jpg,png}").pipe(gulp.dest("D:\\phpStudy\\WWW\\myfiledemo\\mytwoprogrammer\\img"));
+});
+gulp.task("copycss",function(){
+	gulp.src("css/*.css").pipe(gulp.dest("D:\\phpStudy\\WWW\\myfiledemo\\mytwoprogrammer\\css"));
+});

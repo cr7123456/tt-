@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="denglu.css">
+	</head>
+	<body>		
+	<div class="box_two">
+		  <div class="bot">
+		  	 <div class="logo">
+			     <a href="#"><img class="img1" src="img/2.png" alt="海尔商城-买家电更省心"/></a>
+			     <img class="img3" src="img/3.png"/>
+			 </div> 
+			<p>注册顺逛商城</p>
+		 </div>
+		
+	</div>
+	
+		<div class="botle">
+		    <div class="botk">
+		    	<p>欢迎登录海尔商城</p>
+		    	<span><a href="">免费注册></a></span>
+		    	<div class="hi">
+		    		<a class="cd" href="">普通登录</a>
+		    		<a class="lk" href="">手机动态密码登录</a>
+		    	</div>
+		    	<div class="shu">
+		    		<span><img src="img/tou.png" alt="" /></span>
+		    		<input id="hy" type="text" placeholder="邮箱/手机" />
+		    		<span class="use">
+		    		        请输入登录名	
+		    	    </span>
+		    	</div>
+		    	
+		    	<div class="mi">
+		    		<span><img src="img/mi.png" alt="" /></span>
+		    		<input  id="gf" type="text" placeholder="密码" />
+		    		<span class="xs">
+		    		       密码不能少于6位
+		    	    </span>
+		    	</div>
+		    	
+		    	<div class="pho">
+		    		<span><img src="img/tou.png" alt="" /></span>
+		    		<input id="ml" type="text" placeholder="请输入手机号" />
+		    		<span class="use1">
+		    		        请输入手机号
+		    	    </span>
+		    	</div>
+		    	
+		    	<div class="aq">
+		    		<span><img src="img/mi.png" alt="" /></span>
+		    		<input id="bv" type="text" placeholder="请输入手机验证码"/>
+		    		|<a href="">获取验证码</a>
+		    		<span class="xs1">
+		    		       验证码不能为空
+		    	    </span>
+		    	</div>
+		    	<a class="kl" href="">忘记密码？</a>
+		    	<a class="deng" href="">登录</a>
+		    
+		    <div class="lia">
+		    	<p>其他登录方式:</p>
+		    	<img src="img/lo.png" alt="" />
+		    	<a href="">新浪微博</a>
+		    	<img src="img/lo.png" alt="" />
+		    	<a href="">支付宝</a>
+		    	<img src="img/lo.png" alt="" />
+		    	<a href="">网易</a>
+		    	<img src="img/lo.png" alt="" />
+		    	<a href="">快捷通</a>
+		    </div>
+		</div>
+<div class="last">
+	<div class="bv">
+	 <div class="opl">
+	   <ul>
+		<li><a href="">关于海尔</a>|</li>
+		<li><a href="">关于海尔</a>|</li>
+		<li><a href="">关于海尔</a>|</li>
+		<li><a href="">关于海尔</a></li>
+	  </ul>
+	  </div>
+	<p class="mlk">备案许可证号：<a href="">鲁ICP备09096283号  鲁ICP备09096283号</a></p>
+	<p class="kj">Copyright©2000-2018 海尔集团电子商务有限公司 All Rights Reserved</p>
+	<img class="gt" src="img/90.png" alt="" />
+	<img class="gt" src="img/90.png" alt="" />
+	<img class="gt" src="img/90.png" alt="" />
+	<img class="gt" src="img/90.png" alt="" />
+	
+	</div>
+</div>
+	</body>
+</html>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+	//点击 普通登录
+	$(".cd").click(function(){
+		$(".pho").css("display","none");
+		$(".aq").css("display","none");
+		$(".shu").css("display","block");
+		$(".mi").css("display","block");
+		$(this).css({
+			color:"#32c4ff",
+			borderBottom:"2px solid #32c4ff"
+		});
+		$(".lk").css({
+			color:"#666666",
+			borderBottom:"2px solid #e4e4e4"
+		});
+			return false;
+	});
+	
+	//点击手机动态码登录
+	$(".lk").click(function(){
+		$(".shu").css("display","none");
+		$(".mi").css("display","none");
+		$(".pho").css("display","block");
+		$(".aq").css("display","block");
+		$(this).css({
+			color:"#32c4ff",
+			borderBottom:"2px solid #32c4ff"
+		});
+		$(".cd").css({
+			color:"#666666",
+			borderBottom:"2px solid #e4e4e4"
+		});
+		return false;
+	});
+	
+//	普通登录   
+	$("#hy").on("blur",function(){
+	   if((this.value)==""){
+		   $(".use").css("display","block");
+	  }else{
+		$(".use").css("display","none");		
+	    }
+	});
+	
+	$("#gf").on("blur",function(){
+	if((this.value).length<6){
+		$(".xs").css("display","block");
+	}else{
+		$(".xs").css("display","none");		
+	}
+});
+
+//手机动态码登录  手机正则验证
+$("#ml").on("blur",function(){
+	var reg=/^1[3-9]\d{9}$/;
+	if((this.value)==""){
+		$(".use1").css("display","block");
+	}else if(reg.test(this.value)==true){
+		$(".use1").css("display","none");		
+	}else{
+		$(".use1").html("手机格式不正确");	
+	}
+})
+
+//验证码
+$("#bv").on("blur",function(){
+      if((this.value)==""){
+		   $(".xs1").css("display","block");
+	  }else{
+		$(".xs1").css("display","none");		
+	    }
+})
+</script>	

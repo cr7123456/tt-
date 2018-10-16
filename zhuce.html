@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="zhuce.css"/>
+	</head>
+	<body>
+		<form id="f" action="zhuce.php" method="post" >
+		<div class="box_two">
+		  <div class="bot">
+		  	 <div class="logo">
+			     <a href="#"><img class="img1" src="img/2.png" alt="海尔商城-买家电更省心"/></a>
+			     <img class="img3" src="img/3.png"/>			      
+			 </div> 
+			 <p>注册顺逛商城</p>
+		 </div>		
+		     <a class="sd" href="">已有海尔商城账号登录></a>
+	   </div>
+	  <!-- she-->
+	  <div class="she">
+	  	    <div class="fd">
+	  		    <img src="img/she2.png" alt="" />
+	  		    <img src="img/she3.png" alt="" />
+	  		    <img src="img/she4.png" alt="" />
+	  		    <a href="">用户注册</a>
+	  	        <a class="iu" href="">用户注册</a>
+	  	    </div>	  	        
+	  </div>
+	  <div class="cr">
+	  	 <div class="cr_le">
+	  		<ul>
+	  			<li>手机号码<input class="pho" name="username" type="text" placeholder="请输入手机号"/>
+	  			<span class="iy">请输入手机号</span> 
+	  			
+	  			</li>
+	  			    
+	  			<li>验证码<input class="yan" type="text" placeholder="请输入验证码"/>
+	  			    <p class="spa2"></p>
+	  			    <span class="it">验证码不能为空</span>
+	  			   
+	  			</li>
+	  			    
+	  			<li>密码<input class="sub" name="userpass" type="text" placeholder="请输入密码"/>
+	  			    <span class="yy">密码设置有风险</span>
+	  			</li>
+	  			<li>再次输入<input class="sub1" type="text" placeholder="请输入密码"/>
+	  			    <span class="pf">密码不正确</span>
+	  			</li>
+	  			 <li>
+	  			  <a class="oo" href="">手机</a>	  			  |
+	  			  <a class="pp" href="">邮箱</a>
+	  			</li>
+	  			<li><a href="">注册</a></li>
+	  		</ul>
+	  	 </div>
+	  	 
+	  	 <div class="cr_le1">
+	  		<ul>
+	  			<li>邮箱<input class="ema" name="username" type="text" placeholder="请输入邮箱"/>
+	  			    <span class="ik">请输入邮箱</span>
+	  			</li>
+	  			<li>验证码<input class="yan1" type="pass" placeholder="请输入验证码"/>
+	  			    <p class="spa2"></p>
+	  			    <span class="ip">验证码不能为空</span> 	  				
+	  			</li>
+	  			<li>密码<input class="sub" name="userpass" type="password" placeholder="请输入密码"/>
+	  			    <span class="yy">密码设置有风险</span>
+	  			</li>
+	  			<li>再次输入<input class="sub1" type="password" placeholder="请输入密码"/>
+	  			    <span class="pf">密码不正确</span>
+	  			</li>
+	  			 <li>
+	  			  <a class="oo" href="">手机</a>	  			  |
+	  			  <a class="pp" href="">邮箱</a>
+	  			</li>
+	  			<li><a href="###">注册</a></li>
+	  		</ul>
+	  	 </div>
+	  </div>
+	  
+<div class="last">
+	<div class="bv">
+	 <div class="opl">
+	   <ul>
+		<li><a href="">关于海尔</a>|</li>
+		<li><a href="">关于海尔</a>|</li>
+		<li><a href="">关于海尔</a>|</li>
+		<li><a href="">关于海尔</a></li>
+	  </ul>
+	  </div>
+	<p class="mlk">备案许可证号：<a href="">鲁ICP备09096283号  鲁ICP备09096283号</a></p>
+	<p class="kj">Copyright©2000-2018 海尔集团电子商务有限公司 All Rights Reserved</p>
+	<img class="gt" src="img/90.png" alt="" />
+	<img class="gt" src="img/90.png" alt="" />
+	<img class="gt" src="img/90.png" alt="" />
+	<img class="gt" src="img/90.png" alt="" />
+	
+	</div>
+</div>
+	</body>
+</html>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		
+		 //邮箱正则验证
+    $(".ema").on("blur",function(){
+    	var reg=/^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.com|\.cn|\.net)$/; 
+    	if(this.value==""){
+    		$(".ik").css("display","inline-block");
+    	}else if(reg.test(this.value)==true){
+    		$(".ik").css("display","none");
+    	}else{
+    		$(".ik").html("邮箱格式不正确");
+    	}
+    })
+	
+	//邮箱验证码焦点消失
+	$(".yan1").on("blur",function(){
+		if($(this).val()==""){
+			$(".ip").css("display","inline-block");
+		}else if($(this).val()==$(".spa2").html()){
+			$(".ip").css("display","none");
+		}else{
+			$(".ip").html("验证码不正确");
+		}
+		
+	})
+	
+	//点击手机注册
+	$(".oo").on("click",function(){
+		$(".cr_le").css("display","block");
+		$(".cr_le1").css("display","none");
+		$(".ik").css("display","none");
+		$(".ip").css("display","none");
+		return false;
+	})
+	
+	//点击邮箱注册
+	$(".pp").on("click",function(){
+		$(".cr_le1").css("display","block");
+		$(".cr_le").css("display","none");
+		$(".iy").css("display","none");
+		$(".it").css("display","none");
+		return false;
+	})
+
+
+//四位验证码
+function yanzhengma(n){
+	var str="";
+	var arr=["A","B","C","S","W","E","R","G","H","Y","I","K","L","P","Q","M","Z","D","R"];
+	for(var i=0;i<n;i++){
+		var index=parseInt(Math.random()*arr.length);
+		str+=arr[index];
+	}
+	return str;
+}
+
+$(".spa2").on("click",function(){
+  	$(".spa2").html(yanzhengma(4));
+})
+
+//手机注册验证
+$(".pho").on("blur",function(){
+	var reg=/^1[3-9]\d{9}$/;
+	if((this.value)==""){
+		$(".iy").css("display","inline-block");
+	}else if(reg.test(this.value)==true){
+		$(".iy").css("display","none");		
+	}else{
+		$(".iy").html("手机格式不正确");	
+	}
+})
+
+//验证码填写验证
+$(".yan").on("blur",function(){
+	if((this.value)==""){
+	   $(".it").css("display","inline-block");
+	}else if((this.value)==$(".spa2").html()){
+   	   $(".it").css("display","none");  	 
+    }else{
+	   $(".it").html("验证码不正确");
+	}
+})
+
+//密码设置
+$(".sub").on("blur",function(){
+	var reg=/^[a-zA-Z0-9_]{6,12}$/;
+    if(reg.test(this.value)==true){
+		$(".yy").css("display","none");
+	}else{
+		$(".yy").css("display","inline-block");
+	}
+})
+
+//重新输入密码是否正确
+$(".sub1").on("blur",function(){
+	if($(this).val()==$(".sub").val()){
+		$(".pf").css("display","none");
+	}else{
+		$(".pf").css("display","inline-block");
+	}
+})
+
+
+	}
+   
+
+
+//window.onload=function(){
+//	$(".spa2").html(yanzhengma(4));
+//}
+
+
+
+window.onload=function(){
+	$(".pho").onblur=function(){
+		//1创建对象
+		let request= new XMLHttpRequest();
+		//2设置请求参数
+		request.open("get","zhuce.php?username"+this.value,true);
+		//3 设置回调函数
+		request.onreadystatechange=function(){
+			if(request.readyState==4 && request.status==200){
+				if(request.responseText=="0"){
+					
+				}else{
+					$(".iy").innerHTML="用户名已被占用，请重新注册";
+				}
+			}
+		}
+		//发送请求
+		request.send();
+	}
+}
+
+$("#f").click(function(){
+	
+	
+})
+</script>
